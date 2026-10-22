@@ -1,0 +1,17 @@
+{
+  "name": "@workspace/clinical-validator",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild handler.mjs --bundle --platform=node --target=node22 --format=esm --outfile=dist/index.mjs --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "test": "node test/run.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.895.0",
+    "fast-xml-parser": "^4.5.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
