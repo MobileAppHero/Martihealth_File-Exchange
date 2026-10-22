@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Tech Request Intake"
+description = "A responsive internal request hub where authenticated team members submit bug reports, enhancements, new software requests, and technology support questions, while the tech team reviews pending submissions and routes them to the right project area."
+version = "1.0.0"
+id = "artifacts/tech-request-intake"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18875
+
+[services.development]
+run = "pnpm --filter @workspace/tech-request-intake run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tech-request-intake", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/tech-request-intake/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18875"
+BASE_PATH = "/"
