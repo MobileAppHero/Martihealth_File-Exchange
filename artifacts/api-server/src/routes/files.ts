@@ -28,6 +28,7 @@ const ALLOWED_EXTENSIONS = new Set([
   "zip", "gz", "tar",
   "pdf", "doc", "docx", "xls", "xlsx",
   "json", "xml",
+  "hl7", "ndjson", "ccda", "cda",
   "edi", "x12", "835", "837", "834", "270", "271", "276", "277",
   "pgp", "gpg", "asc",
 ]);
